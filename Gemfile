@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem "font-awesome-rails"
+gem 'jquery-rails'
 
 gem 'pry'
 group :development, :test do
