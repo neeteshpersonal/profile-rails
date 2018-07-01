@@ -1,4 +1,3 @@
-Page Preloder -->
 <div id="preloder">
 	<div class="loader"></div>
 </div>
@@ -15,7 +14,7 @@ Page Preloder -->
 			</div>
 			<div class="col-md-8 text-md-right header-buttons">
 				<a href="/download_resume" target="_blank" class="site-btn">Download CV</a>
-				<a href="#" class="site-btn">Discover me</a>
+				<!-- <a href="#" class="site-btn">Discover me</a> -->
 			</div>
 		</div>
 	</div>
@@ -113,14 +112,26 @@ Page Preloder -->
 		</div>
 		<div class="portfolio-warp">
 			<div class="row">
-				<div class="col-xl-3 col-lg-6 col-md-6">
-					<div class="portfolio-item">
-						<a href="img/portfolio/1.jpg" class="set-bg port-pic" data-setbg="img/portfolio/1.jpg"></a>
-						<h2>Species List Pro</h2>
-						<p>Web </p>
+				<% @projects.each do |project| %>
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<div class="portfolio-item">
+							<h2><a href="<%= project.url %>" target="_blank"><%= project.title %></a></h2>
+							<p>Team Size: <%= project.team_size %></p>
+							<p>Role: <%= project.role %></p>
+							<p>Skills: 
+								<% project.skills.each do |skill| %>
+									<%= skill %>, 
+								<% end %>
+							</p>
+							<hr>
+							<p>Description: <%= project.description %></p>
+
+							<!-- <a href="img/portfolio/1.jpg" class="set-bg port-pic" data-setbg="img/portfolio/1.jpg"></a> -->
+
+						</div>
 					</div>
-				</div>
-				<div class="col-xl-3 col-lg-6 col-md-6">
+				<% end %>
+				<!-- <div class="col-xl-3 col-lg-6 col-md-6">
 					<div class="portfolio-item">
 						<a href="img/portfolio/2.jpg" class="set-bg port-pic" data-setbg="img/portfolio/2.jpg"></a>
 						<h2>Partners4Housing</h2>
@@ -140,7 +151,7 @@ Page Preloder -->
 						<h2>InfoVera</h2>
 						<p>Graphic design</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -181,7 +192,7 @@ Page Preloder -->
 
 
 <!-- Review section start -->
-<section class="review-section spad pb-0">
+<!-- <section class="review-section spad pb-0">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xl-7 offset-xl-2">
@@ -211,7 +222,7 @@ Page Preloder -->
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 <!-- Review section end -->
 
 <!-- Extra section start -->

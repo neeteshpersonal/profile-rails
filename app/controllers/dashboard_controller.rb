@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 	def index
-		
+		@user = User.first
+		@projects = Project.all.where(user_id: @user.id)
 	end
 
 	def resume_download

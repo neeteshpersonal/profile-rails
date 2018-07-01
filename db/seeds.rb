@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.create(full_name: "Neetesh gupta", position: "Associate Software Engineer")
+Project.create(title: "Partners4Housing", role: "Team Member", team_size: 2, user_id: user.id, skills: ["Ruby On Sinatra", "Algolia Search"], description: "Partners4Housing empowers families to create housing solutions that meet the unique needs of their loved one with a disability.", url: "http://partners4housing.com")
+Project.create(title: "SpeciesListPro", role: "Team Member", team_size: 2, user_id: user.id, skills: ["ReactJs", "ElasticSearch", "WebScrapping","Ruby On Rails"], description: "Species List Pro is an online tool that eliminates the need for manual data entry.  Used and trusted by environmental consultants, it quickly generates accurate and comprehensive species lists – all you need to do is type in the species name.", url: "http://specieslistpro.com")
