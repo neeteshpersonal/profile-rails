@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 	def index
 		@user = User.first
-		@projects = Project.all.where(user_id: @user.id)
+		@projects = Project.paginate(:page => params[:page], :per_page => 4)
 	end
 
 	def resume_download
